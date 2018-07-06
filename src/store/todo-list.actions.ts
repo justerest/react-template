@@ -6,9 +6,9 @@ export const add = (str: string) => action(ADD, str);
 export const clear = () => action(CLEAR);
 
 export const getData = (): AsyncAction => async (dispatch, getStore) => {
-  const store = getStore();
+  const { todolist } = getStore();
   await delay(1000);
-  dispatch(add('' + store.todoList.value.length));
+  dispatch(add('' + todoList.value.length));
   await delay(1000);
   dispatch(add('2'));
 };
