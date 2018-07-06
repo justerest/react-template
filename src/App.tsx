@@ -6,7 +6,8 @@ import { IRootStore } from './store';
 import * as actions from './store/todo-list.actions';
 import { TodoListState } from './store/todo-list.reducer';
 
-class AppComponentNotConnected extends React.Component<TodoListState & typeof actions> {
+export class AppComponent extends React.Component<TodoListState & typeof actions> {
+
   render() {
     return (
       <div className="app">
@@ -27,10 +28,6 @@ class AppComponentNotConnected extends React.Component<TodoListState & typeof ac
     );
   }
 
-  addStandardTodo = () => this.props.add('todo1');
 }
 
-export const AppComponent = connect(
-  (state: IRootStore) => state.todoList,
-  actions,
-)(AppComponentNotConnected);
+export const AppComponentConnected = connect((store: IRootStore) => store.todoList, actions)(AppComponent);
