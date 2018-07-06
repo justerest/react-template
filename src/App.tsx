@@ -9,13 +9,13 @@ import { TodoListState } from './store/todo-list.reducer';
 class AppComponentNotConnected extends React.Component<TodoListState & typeof actions> {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React, justerest!</h1>
+      <div className="app">
+        <header className="app__header">
+          <img src={logo} className="app__logo" alt="logo" />
+          <h1 className="app__title">Welcome to React, justerest!</h1>
         </header>
         <p
-          className="App-intro"
+          className="app__intro"
           onClick={this.props.getData}
           onDoubleClick={this.props.clear}
         >
