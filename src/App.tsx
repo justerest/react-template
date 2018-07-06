@@ -14,9 +14,14 @@ class AppComponentNotConnected extends React.Component<TodoListState & typeof ac
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React, justerest!</h1>
         </header>
-        <p className="App-intro" onClick={this.addStandardTodo}>
+        <p
+          className="App-intro"
+          onClick={this.props.getData}
+          onDoubleClick={this.props.clear}
+        >
           To get started, edit <code>src/App.tsx</code> and save to reload.
-          {this.props.value.length}
+          <br />
+          {...this.props.value}
         </p>
       </div >
     );
