@@ -1,12 +1,14 @@
 import { action } from 'typesafe-actions';
 import { ADD, CLEAR } from './todo-list.constants';
+import { AsyncAction } from './types';
 
 export const add = (str: string) => action(ADD, str);
 export const clear = () => action(CLEAR);
 
-export const getData = () => async (dispatch: any) => {
+export const getData = (): AsyncAction => async (dispatch, getStore) => {
+  const store = getStore();
   await delay(1000);
-  dispatch(add('1'));
+  dispatch(add('' + store.todoList.value.length));
   await delay(1000);
   dispatch(add('2'));
 };
