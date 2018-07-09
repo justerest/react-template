@@ -1,8 +1,12 @@
 import { action } from 'typesafe-actions';
 import { AsyncAction } from './types';
 
+// Sync actions
+
 export const add = (str: string) => action('todoList/ADD', str);
 export const clear = () => action('todoList/CLEAR');
+
+// Async actions
 
 export const getData = (): AsyncAction => async (dispatch, getStore) => {
   const { todoList } = getStore();

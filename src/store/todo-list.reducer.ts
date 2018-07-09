@@ -1,5 +1,5 @@
 import { Reducer } from 'redux';
-import { ActionType, getType } from 'typesafe-actions';
+import { ActionType } from 'typesafe-actions';
 import * as actions from './todo-list.actions';
 
 export class TodoListState {
@@ -11,12 +11,12 @@ export const todoListReducer: Reducer<TodoListState, ActionType<typeof actions>>
   (state = new TodoListState(), action) => {
     switch (action.type) {
 
-      case getType(actions.add):
+      case 'todoList/ADD':
         const value = state.value.slice();
         value.push(action.payload);
         return { ...state, value };
 
-      case getType(actions.clear):
+      case 'todoList/CLEAR':
         return new TodoListState();
 
     }

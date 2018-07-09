@@ -1,4 +1,8 @@
-import { AnyAction } from 'redux';
-import { IRootStore } from '.';
+import { ActionType } from 'typesafe-actions';
+import { IStore } from '.';
+import * as actions from './todo-list.actions';
 
-export type AsyncAction = (dispatch: (action: AnyAction) => void, getStore: () => IRootStore) => Promise<void>;
+export type AsyncAction = (
+  dispatch: (action: ActionType<typeof actions>) => void,
+  getStore: () => IStore,
+) => Promise<void>;

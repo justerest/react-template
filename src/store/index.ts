@@ -2,11 +2,11 @@ import { applyMiddleware, combineReducers, createStore, Reducer } from 'redux';
 import thunk from 'redux-thunk';
 import { todoListReducer, TodoListState } from './todo-list.reducer';
 
-export interface IRootStore {
+export interface IStore {
   todoList: TodoListState;
 }
 
-const rootReducer: Reducer<IRootStore> = combineReducers({
+const rootReducer: Reducer<IStore> = combineReducers({
   todoList: todoListReducer,
 });
 
