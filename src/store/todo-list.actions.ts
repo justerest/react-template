@@ -2,10 +2,12 @@ import { action } from 'typesafe-actions';
 import { ADD, CLEAR } from './todo-list.constants';
 import { AsyncAction } from './types';
 
+// Mutations
+
 export const add = (str: string) => action(ADD, str);
 export const clear = () => action(CLEAR);
 
-// Async actions
+// Actions
 
 export const getData = (): AsyncAction => async (dispatch, getStore) => {
   const { todoList } = getStore();
