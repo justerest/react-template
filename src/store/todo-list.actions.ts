@@ -1,10 +1,9 @@
 import { action } from 'typesafe-actions';
+import { ADD, CLEAR } from './todo-list.constants';
 import { AsyncAction } from './types';
 
-// Sync actions
-
-export const add = (str: string) => action('todoList/ADD', str);
-export const clear = () => action('todoList/CLEAR');
+export const add = (str: string) => action(ADD, str);
+export const clear = () => action(CLEAR);
 
 // Async actions
 
