@@ -1,6 +1,6 @@
-import { action } from 'typesafe-actions';
-import { ADD, CLEAR } from './todo-list.constants';
-import { AsyncAction } from './types';
+import { action } from "typesafe-actions";
+import { ADD, CLEAR } from "./todo-list.constants";
+import { AsyncAction } from "./types";
 
 // Sync actions (mutations)
 
@@ -12,9 +12,9 @@ export const clear = () => action(CLEAR);
 export const getData = (): AsyncAction => async (dispatch, getStore) => {
   const { todoList } = getStore();
   await delay(1000);
-  dispatch(add('' + todoList.value.length));
+  dispatch(add("" + todoList.value.length));
   await delay(1000);
-  dispatch(add('2'));
+  dispatch(add("2"));
 };
 
 function delay(time: number) {

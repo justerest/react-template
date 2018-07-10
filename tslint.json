@@ -5,11 +5,6 @@
     "tslint-react"
   ],
   "rules": {
-    "quotemark": [
-      true,
-      "single",
-      "jsx-double"
-    ],
     "member-access": [
       true,
       "no-public"
@@ -17,7 +12,8 @@
     "curly": [
       true,
       "ignore-same-line"
-    ]
+    ],
+    "one-line": false
   },
   "linterOptions": {
     "exclude": [

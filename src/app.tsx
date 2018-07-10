@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { connect } from 'react-redux';
-import './app.scss';
-import logo from './logo.svg';
-import { IStore } from './store';
-import * as actions from './store/todo-list.actions';
-import { TodoListState } from './store/todo-list.reducer';
+import * as React from "react";
+import { connect } from "react-redux";
+import "./app.scss";
+import logo from "./logo.svg";
+import { IStore } from "./store";
+import * as actions from "./store/todo-list.actions";
+import { TodoListState } from "./store/todo-list.reducer";
 
 export class AppComponent extends React.Component<TodoListState & typeof actions> {
 

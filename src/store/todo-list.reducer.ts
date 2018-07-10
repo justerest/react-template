@@ -1,7 +1,7 @@
-import { Reducer } from 'redux';
-import { ActionType } from 'typesafe-actions';
-import * as actions from './todo-list.actions';
-import { ADD, CLEAR } from './todo-list.constants';
+import { Reducer } from "redux";
+import { ActionType } from "typesafe-actions";
+import * as actions from "./todo-list.actions";
+import { ADD, CLEAR } from "./todo-list.constants";
 
 export class TodoListState {
   value: string[] = [];
